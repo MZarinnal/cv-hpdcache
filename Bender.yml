@@ -10,9 +10,11 @@ export_include_dirs:
   - rtl/include
 
 sources:
-  - rtl/src/common/macros/behav/hpdcache_sram_1rw.sv
-  - rtl/src/common/macros/behav/hpdcache_sram_wbyteenable_1rw.sv
-  - rtl/src/common/macros/behav/hpdcache_sram_wmask_1rw.sv
+  - target: not(hpdcache_tc_sram)
+    files:
+      - rtl/src/common/macros/behav/hpdcache_sram_1rw.sv
+      - rtl/src/common/macros/behav/hpdcache_sram_wbyteenable_1rw.sv
+      - rtl/src/common/macros/behav/hpdcache_sram_wmask_1rw.sv
   - rtl/src/hpdcache_pkg.sv
   - rtl/src/utils/hpdcache_mem_req_read_arbiter.sv
   - rtl/src/utils/hpdcache_mem_req_write_arbiter.sv
